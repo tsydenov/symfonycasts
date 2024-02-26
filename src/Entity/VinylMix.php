@@ -107,10 +107,23 @@ class VinylMix
         return $this->votes;
     }
 
+    public function getVotesString(): string
+    {
+        $prefix = ($this->votes === 0) ? '' : (($this->votes >= 0) ? '+' : '-');
+        return sprintf('%s %d', $prefix, abs($this->votes));
+    }
+
     public function setVotes(int $votes): static
     {
         $this->votes = $votes;
 
         return $this;
+    }
+
+    public function getImageUrl(int $width): string
+    {
+        return sprintf(
+            ''
+        );
     }
 }
